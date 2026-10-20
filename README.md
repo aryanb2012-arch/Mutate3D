@@ -11,10 +11,11 @@ Mutate3D bridges molecular biology and computer science by simulating how mRNA s
   - **Silent**: Codon changes, but the translated amino acid remains identical.
   - **Missense**: Codon changes, resulting in a different amino acid.
   - **Nonsense**: Codon changes into a premature **STOP** signal.
-
+- **Gene Sequence Scanner**: Sweeps across complete multi-codon mRNA strands in steps of 3 bases using index math (`range(0, len(seq), 3)`), detecting and logging every mutation's exact sequence position and type.
+  
 ## 💻 Tech Stack
 - **Language**: Python 3
-- **Core Concepts**: Dictionaries, String Slicing, Step-based Loops, Conditional Logic (`if/elif/else`), Modular Functions
+- **Core Concepts**: Dictionaries, String Slicing, Step-based Loops, Conditional Logic (`if/elif/else`), Modular Functions,Scope & Modular Architecture (Passing parameters into functions and logging output via `return` values)
 
 ## 🚀 Quick Usage
 ```python
@@ -22,3 +23,13 @@ Mutate3D bridges molecular biology and computer science by simulating how mRNA s
 classify_mutation("UUU", "UUC")  # Output: Silent
 classify_mutation("AUG", "GCU")  # Output: Missense
 classify_mutation("GCU", "UAG")  # Output: Nonsense
+# Initialize RNA strands
+original_gene = "AUGUUUGCU"
+mutated_gene  = "AUGUUCUAG"
+
+# Scan strands and log detected mutations
+results = scan_gene_mutations(original_gene, mutated_gene)
+print(results)
+
+# Output:
+# ['Position 3: UUU -> UUC (Silent)', 'Position 6: GCU -> UAG (Nonsense)']
