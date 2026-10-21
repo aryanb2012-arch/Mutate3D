@@ -12,6 +12,7 @@ Mutate3D bridges molecular biology and computer science by simulating how mRNA s
   - **Missense**: Codon changes, resulting in a different amino acid.
   - **Nonsense**: Codon changes into a premature **STOP** signal.
 - **Gene Sequence Scanner**: Sweeps across complete multi-codon mRNA strands in steps of 3 bases using index math (`range(0, len(seq), 3)`), detecting and logging every mutation's exact sequence position and type.
+- **RNA Translation Engine**: Converts codons into amino acids and detects start(AUG) and stop codons(UAG,UAA,UGA)
   
 ## 💻 Tech Stack
 - **Language**: Python 3
@@ -33,3 +34,7 @@ print(results)
 
 # Output:
 # ['Position 3: UUU -> UUC (Silent)', 'Position 6: GCU -> UAG (Nonsense)']
+
+#Example:
+#Input: "GCUAUGUUUUUCGCCUAG"
+Output: "M-F-F-A"
