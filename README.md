@@ -35,6 +35,6 @@ print(results)
 # Output:
 # ['Position 3: UUU -> UUC (Silent)', 'Position 6: GCU -> UAG (Nonsense)']
 
-#Example:
+#Example of how the RNA translation engine works:
 #Input: "GCUAUGUUUUUCGCCUAG"
-Output: "M-F-F-A"
+#Output: "M-F-F-A" (Disregards the codons until the start codon "AUG")
