@@ -9,7 +9,8 @@ if len(original) == len(mutated):
     mutation_count = 0
     for i in range(len(original)):
         if original[i] != mutated[i]:
-            print(f"Mutation found at index: {i+1}: {original[i]} -> {mutated[i]}")
+            codon_num = (i//3 + 1)
+            print(f"Mutation found at index: {i+1} (Codon {codon_num}): {original[i]} -> {mutated[i]}")
             mutation_count += 1
     orig_protein = translate_sequence(original)
     mut_protein  = translate_sequence(mutated)
