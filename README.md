@@ -1,6 +1,6 @@
 # Mutate3D 🧬
 
-A python-based bioinformatics tool designed to translate RNA sequences and analyze point mutations.I am creating a 3D Mutation Visualizer to learn more about Biology, Chemistry and Coding while trying to create a project that is not only fun to make on the way but also can make learning more interactive rather than just textbook learning
+A python-based bioinformatics tool designed to translate RNA sequences and analyze point mutations.I am creating a ***3D Mutation Visualizer*** to learn more about Biology, Chemistry and Coding while trying to create a project that is not only fun to make on the way but also can make learning more interactive rather than just textbook learning
 
 ## 📌 Project Overview
 Mutate3D bridges molecular biology and computer science by simulating how mRNA sequences translate into protein chains and evaluating the impact of genetic mutations.
@@ -13,10 +13,19 @@ Mutate3D bridges molecular biology and computer science by simulating how mRNA s
   - **Nonsense**: Codon changes into a premature **STOP** signal.
 - **Gene Sequence Scanner**: Sweeps across complete multi-codon mRNA strands in steps of 3 bases using index math (`range(0, len(seq), 3)`), detecting and logging every mutation's exact sequence position and type.
 - **RNA Translation Engine**: Converts codons into amino acids and detects start(AUG) and stop codons(UAG,UAA,UGA)
+- **Modular Reporting:** Generates clean, formatted summary reports displaying sequence length, total mutation counts, classification type, and protein chain comparisons.
   
 ## 💻 Tech Stack
 - **Language**: Python 3
 - **Core Concepts**: Dictionaries, String Slicing, Step-based Loops, Conditional Logic (`if/elif/else`), Modular Functions,Scope & Modular Architecture (Passing parameters into functions and logging output via `return` values)
+
+## 📁 Project Structure
+
+```text
+Mutate3D/
+├── main.py                     # Primary entry point & sequence scanner logic
+├── session_4_translation.py    # Translation engine (RNA -> Protein)
+└── session_5_summary.py        # Summary report generator
 
 ## 🚀 Quick Usage
 ```python
