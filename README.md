@@ -15,6 +15,13 @@ Mutate3D bridges molecular biology and computer science by simulating how mRNA s
 - **RNA Translation Engine**: Converts codons into amino acids and detects start(AUG) and stop codons(UAG,UAA,UGA)
 - **Modular Reporting:** Generates clean, formatted summary reports displaying sequence length, total mutation counts, classification type, and protein chain comparisons.
 - **FASTA File Parser:** Dynamically parses standard .fasta files, cleans whitespaces, strips header metadata (>), handles wrapped multiline sequences and returns dual values (header, sequence)
+
+## 🆕 Recent Updates
+- **FASTA Parser Integration (`session_6_file_reader.py`)**: 
+  - Parses FASTA files dynamically using `.startswith(">")` to strip header metadata from sequence fragments.
+  - Cleans whitespace and handles multi-line FASTA streams, outputting a tuple of `(header, sequence)`.
+- **Expanded Codon Dictionary**: Added complete Serine family coverage (`UCC`, `UCU`, `UCA`, `UCG`) to resolve full mRNA-to-protein translation without unmapped codons.
+- **Dynamic File Ingestion in `main.py`**: Replaced static sequence inputs with live FASTA file parsing, directly piping parsed mRNA strands into the mutation scanner and summary reporter.
   
 ## 💻 Tech Stack
 - **Language**: Python 3
@@ -24,11 +31,11 @@ Mutate3D bridges molecular biology and computer science by simulating how mRNA s
 
 ```text
 Mutate3D/
-├── main.py                     # Primary entry point & sequence scanner logic
+├── main.py                     # Primary entry point & pipeline integration
 ├── session_4_translation.py    # Translation engine (RNA -> Protein)
 ├── session_5_summary.py        # Summary report generator
-├── session_6_file_reader.py    # FASTA file parsing & metadata extraction
-└── sequence.fasta              # FASTA sequence input file
+├── session_6_file_reader.py    # FASTA file parser & header extractor
+└── sequence.fasta              # RNA sequence input file
 
 ## 🚀 Quick Usage
 ```python
