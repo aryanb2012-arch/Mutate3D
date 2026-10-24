@@ -2,7 +2,7 @@ def translate_codon(codon):
     codon_table = {
         "AUG": "M", "UUU": "F", "UUC": "F", 
         "GCU": "A", "GCC": "A", "UAG": "STOP", 
-        "UAA": "STOP", "UGA": "STOP"
+        "UAA": "STOP", "UGA": "STOP", "UCC": "S", "UCU": "S", "UCA": "S", "UCG": "S"
     }
     return codon_table.get(codon,"Unknown")
 

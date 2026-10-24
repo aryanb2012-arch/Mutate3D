@@ -1,9 +1,13 @@
+from session_6_file_reader import read_fasta_file
 from session_5_summary import generate_summary
 from session_4_translation import translate_sequence
 
 # The mutation scanner logic lives here
 original = "AUGUUUUUCGCCUAG"
 mutated = "AUGUUCGCCUUUUAG"  # Example mutation
+
+header, original = read_fasta_file("sequence.fasta")
+print(f"--- Loaded Gene: {header} ---")
 
 if len(original) == len(mutated):
     mutation_count = 0

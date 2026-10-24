@@ -4,8 +4,8 @@ def read_sequence_file(filename):
     return sequence
 
 def read_fasta_file(filename):
-    sequence = " "
-    header = " "
+    sequence = ""
+    header = ""
     with open(filename, "r") as file:
         for line in file:
             clean_line = line.strip()
