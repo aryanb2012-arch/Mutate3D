@@ -14,6 +14,7 @@ Mutate3D bridges molecular biology and computer science by simulating how mRNA s
 - **Gene Sequence Scanner**: Sweeps across complete multi-codon mRNA strands in steps of 3 bases using index math (`range(0, len(seq), 3)`), detecting and logging every mutation's exact sequence position and type.
 - **RNA Translation Engine**: Converts codons into amino acids and detects start(AUG) and stop codons(UAG,UAA,UGA)
 - **Modular Reporting:** Generates clean, formatted summary reports displaying sequence length, total mutation counts, classification type, and protein chain comparisons.
+- **FASTA File Parser:** Dynamically parses standard .fasta files, cleans whitespaces, strips header metadata (>), handles wrapped multiline sequences and returns dual values (header, sequence)
   
 ## 💻 Tech Stack
 - **Language**: Python 3
@@ -25,7 +26,9 @@ Mutate3D bridges molecular biology and computer science by simulating how mRNA s
 Mutate3D/
 ├── main.py                     # Primary entry point & sequence scanner logic
 ├── session_4_translation.py    # Translation engine (RNA -> Protein)
-└── session_5_summary.py        # Summary report generator
+├── session_5_summary.py        # Summary report generator
+├── session_6_file_reader.py    # FASTA file parsing & metadata extraction
+└── sequence.fasta              # FASTA sequence input file
 
 ## 🚀 Quick Usage
 ```python
