@@ -37,25 +37,35 @@ Mutate3D/
 ├── session_4_translation.py    # Translation engine (RNA -> Protein)
 ├── session_5_summary.py        # Summary report generator
 ├── session_6_file_reader.py    # FASTA file parser & header extractor
-└── sequence.fasta```              # RNA sequence input file
+├── sequence.fasta              # Reference RNA sequence
+├── mutated.fasta               # Variant RNA sequence
+├── LICENSE                     # MIT Open-Source License
+└── README.md                   # Project documentation
+```
 
 ## 🚀 Quick Usage
-```python
-# Classify point mutations between original and mutated codons
-classify_mutation("UUU", "UUC")  # Output: Silent
-classify_mutation("AUG", "GCU")  # Output: Missense
-classify_mutation("GCU", "UAG")  # Output: Nonsense
-# Initialize RNA strands
-original_gene = "AUGUUUGCU"
-mutated_gene  = "AUGUUCUAG"
 
-# Scan strands and log detected mutations
-results = scan_gene_mutations(original_gene, mutated_gene)
-print(results)
+To run the pipeline on your target sequences:
 
-# Output:
-# ['Position 3: UUU -> UUC (Silent)', 'Position 6: GCU -> UAG (Nonsense)']
+1. Add your reference sequence to `sequence.fasta` and your variant sequence to `mutated.fasta`.
+2. Open your terminal in VS Code and execute:
 
-#Example of how the RNA translation engine works:
-#Input: "GCUAUGUUUUUCGCCUAG"
-#Output: "M-F-F-A" (Disregards the codons until the start codon "AUG")
+```bash
+python main.py
+```
+
+### Example Console Output
+
+```text
+--- Analysing original_mRNA vs mutated_mRNA ---
+Mutation found at Codon 2 (Pos 4-6): UUU -> UUC
+Mutation found at Codon 3 (Pos 7-9): UCC -> GCC
+Mutation found at Codon 4 (Pos 10-12): GCC -> UUU
+
+--- MUTATE3D SUMMARY REPORT ---
+Sequence Length: 15
+Total Mutations Found: 3
+Mutation Type: Missense Mutation
+Original: M-F-S-A -> Mutated: M-F-A-F
+-------------------------------
+```
