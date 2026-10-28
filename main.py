@@ -3,18 +3,19 @@ from session_5_summary import generate_summary
 from session_4_translation import translate_sequence
 
 # The mutation scanner logic lives here
-original = "AUGUUUUUCGCCUAG"
-mutated = "AUGUUCGCCUUUUAG"  # Example mutation
+orig_header, original = read_fasta_file("sequence.fasta")
+mut_header, mutated = read_fasta_file("mutate.fasta")
 
-header, original = read_fasta_file("sequence.fasta")
-print(f"--- Loaded Gene: {header} ---")
+print(f"--- Analysing {orig_header} vs {mut_header} ---")
 
 if len(original) == len(mutated):
     mutation_count = 0
-    for i in range(len(original)):
-        if original[i] != mutated[i]:
+    for i in range(0, len(original), 3):
+        orig_codon = original[i:i+3]
+        mut_codon = mutated[i:i+3]
+        if orig_codon != mut_codon:
             codon_num = (i//3 + 1)
-            print(f"Mutation found at index: {i+1} (Codon {codon_num}): {original[i]} -> {mutated[i]}")
+            print(f"Mutation found at codon {codon_num} (Position {i+1}-{i+3}): {orig_codon} -> {mut_codon}")
             mutation_count += 1
     orig_protein = translate_sequence(original)
     mut_protein  = translate_sequence(mutated)
@@ -29,6 +30,3 @@ if len(original) == len(mutated):
             
 else:
     print(f"Error: Sequences must be of same length")    
-
-print("Original Protein:", translate_sequence(original))
-print("Mutated Protein: ", translate_sequence(mutated))
