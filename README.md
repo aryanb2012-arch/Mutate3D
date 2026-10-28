@@ -37,7 +37,7 @@ Mutate3D/
 ├── session_4_translation.py    # Translation engine (RNA -> Protein)
 ├── session_5_summary.py        # Summary report generator
 ├── session_6_file_reader.py    # FASTA file parser & header extractor
-└── sequence.fasta              # RNA sequence input file
+└── sequence.fasta```              # RNA sequence input file
 
 ## 🚀 Quick Usage
 ```python
