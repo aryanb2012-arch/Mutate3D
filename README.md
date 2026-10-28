@@ -1,4 +1,5 @@
 # Mutate3D 🧬
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 A python-based bioinformatics tool designed to translate RNA sequences and analyze point mutations.I am creating a ***3D Mutation Visualizer*** to learn more about Biology, Chemistry and Coding while trying to create a project that is not only fun to make on the way but also can make learning more interactive rather than just textbook learning
 
@@ -22,6 +23,7 @@ Mutate3D bridges molecular biology and computer science by simulating how mRNA s
   - Cleans whitespace and handles multi-line FASTA streams, outputting a tuple of `(header, sequence)`.
 - **Expanded Codon Dictionary**: Added complete Serine family coverage (`UCC`, `UCU`, `UCA`, `UCG`) to resolve full mRNA-to-protein translation without unmapped codons.
 - **Dynamic File Ingestion in `main.py`**: Replaced static sequence inputs with live FASTA file parsing, directly piping parsed mRNA strands into the mutation scanner and summary reporter.
+- **Position-Specific Codon Diagnostics:** Upgraded the scanner from whole-gene global labels to granular per-codon evaluation (`Codon 2 (Pos 4-6)`).
   
 ## 💻 Tech Stack
 - **Language**: Python 3
